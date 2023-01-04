@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  start:
+    desc: start all containers
+    cmds:
+      - docker-compose up -d
+      
+  stop:
+    desc: stop all containers
+    cmds:
+      - docker-compose down
