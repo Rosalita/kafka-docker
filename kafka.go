@@ -9,16 +9,6 @@ import (
 	kafka "github.com/segmentio/kafka-go"
 )
 
-func main() {
-	ctx := context.Background()
-
-	createTopic("test") // a topic is a message queue.
-
-	produce(ctx, "test") // publish a message.
-
-	consume(ctx, "test") // read a message.
-}
-
 func produce(ctx context.Context, topic string) {
 	writer := kafka.NewWriter(kafka.WriterConfig{
 		Brokers: []string{"localhost:9092"},
